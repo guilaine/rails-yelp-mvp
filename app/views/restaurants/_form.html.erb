@@ -1,0 +1,19 @@
+<%= simple_form_for(@restaurant) do |f| %>
+ <% if @restaurant.errors.any? %>
+   <div id="error_explanation">
+     <ul>
+     <% @restaurant.errors.full_messages.each do |message| %>
+       <li><%= message %></li>
+     <% end %>
+     </ul>
+   </div>
+ <% end %>
+
+ <%= f.input :name %>
+ <%= f.input :address %>
+ <%= f.input :phone_number %>
+ <%= f.input :category %>
+
+ <%= f.button :submit %>
+ <%= link_to "Back", restaurants_path, {class: "btn btn-primary"} %>
+<% end %>
